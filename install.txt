@@ -1,7 +1,7 @@
---- best change interpreter inside sublime
+(1) --- best change interpreter inside sublime
 pdf in docs
 
---- Steps for Starting a New Flask Project using Python3 venv
+(2) --- Steps for Starting a New Flask Project using Python3 venv
 - virtual env install, configure, activate
 apt-get install python3-venv
 python3 -m venv venv 
