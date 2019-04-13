@@ -1,13 +1,19 @@
-h2 {color: red;}
-h3 {color: blue;}
+h2 {color: darkred;}
+h3 {color: darkblue;}
+div {
+  padding-top: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 0px;
+}
 .container {
   padding-top: 10px;
-  border-style: double;
+  border-style: solid;
   background-color:lightblue;
 }
 .subCont {
   padding-top: 10px;
-  border-style: double;
+  border-style: solid;
   background-color:lightgreen;
 }
 .active {
@@ -15,7 +21,7 @@ h3 {color: blue;}
   font-weight:bold;  
 }
 .footer {
-  border-style: double;
+  border-style: solid;
   background-color:grey;
 }
 .big {

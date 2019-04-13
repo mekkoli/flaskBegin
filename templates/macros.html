@@ -1,13 +1,15 @@
 {% macro nav_link(endpoint, name) %}
   <option value="{{url_for(endpoint)}}">{{name}}</option>
 {% endmacro %}
-{% macro nav_span(endpoint, name) %}
+
+{% macro nav_span(endpoint,title) %}
   {% if request.endpoint.endswith(endpoint) %}
-    ( <div class="horz">{{endpoint}}<div class="big">&nbsp;{{name}}</div></div> )
+    ( <div class="horz">{{endpoint}}<div class="big">&nbsp;{{title}}</div></div> )
   {% else %}
-    [ <div><a href="{{url_for(endpoint)}}">{{name}}</a></div> ]
+    [ <div><a href="{{url_for(endpoint)}}">{{title}}</a></div> ]
   {% endif %}
 {% endmacro %}
+
 {% macro bold(endpoint, name) %}
   {% if request.endpoint.endswith(endpoint) %}
     <div class="small">{{name}}</div><div class="big">{{url_for(endpoint) }}</div>

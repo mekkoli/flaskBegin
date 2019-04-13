@@ -1,8 +1,10 @@
 # 2019-04-12 arrivato alla fine del pdf
 # eliminare i riferimenti a cdn esterni css ...
+# 2019-04-12 fatto
 from flask import Flask, render_template
 from flask import request
 import datetime
+import platform
 
 app = Flask(__name__)
 
@@ -20,7 +22,8 @@ def root():
     my_string="root page", 
     my_list=['a','b','c','d','e','f'],
     current_time=datetime.datetime.now(),
-    title="root"
+    title="/",
+    pyVer=platform.python_version()
   )
 
 @app.route("/home")
@@ -56,7 +59,7 @@ def contact():
 @app.route('/shutdown')
 def shutdown():
     shutdown_server()
-    return 'by by ...'
+    return platform.python_version() + ' by by ...'
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')

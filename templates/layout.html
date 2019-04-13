@@ -13,22 +13,31 @@
   <nav class="container">
     <div class="horz">
       {{nav_span('root', 'root') }}
-      {{nav_span('home', 'Home') }}
-      {{nav_span('about', 'About') }}
-      {{nav_span('contact', 'Contact Us') }}
+      {{nav_span('home', 'home page') }}
+      {{nav_span('about', 'about page') }}
+      {{nav_span('contact', 'contacts page') }}
       <div>
         <form>
           <input type="text">
           <button type="submit">click</button>
         </form>
-      </div>&nbsp;
-      <select onchange="location = this.value;">
-        <option value="">dropDownMenu</option>
-        {{nav_link('root', 'root') }}
-        {{nav_link('home', 'Home') }}
-        {{nav_link('about', 'About') }}
-        {{nav_link('contact', 'Contact Us') }}
-      </select>
+      </div>
+      <div>
+        <select onchange="location = this.value;">
+          <option value="">dropDownMenu</option>
+          {{nav_link('root', 'root') }}
+          {{nav_link('home', 'Home') }}
+          {{nav_link('about', 'About') }}
+          {{nav_link('contact', 'Contact Us') }}
+        </select>
+      </div>
+      <div>
+        <a 
+          href="/shutdown" 
+          title="shutdown python {{pyVer}}">
+          <img src="{{ url_for('static', filename='imgs/shutdown.png') }}" width="32"/>
+        </a>
+      </div>
     </div>
   </nav>
   <div class="subCont">
@@ -44,8 +53,7 @@
         base and child templates using the super
         powerful super block!<br>
       {% endblock %}
-    </div><br>    
-      <a href="/shutdown">shutdown</a>
+    </div><br>
   </div>
 </body>
 </html>
