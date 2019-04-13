@@ -6,12 +6,12 @@ import datetime
 
 app = Flask(__name__)
 
-@app.template_filter()
+@app.template_filter("datetimefilter")
 def datetimefilter(value, format='%Y-%m-%d %02H:%02M:%02S'):
   """Convert a datetime to a differentformat."""
   return value.strftime(format)
 
-app.jinja_env.filters['datetimefilter'] = datetimefilter
+#app.jinja_env.filters['datetimefilter'] = datetimefilter
 
 @app.route("/")
 def root():
