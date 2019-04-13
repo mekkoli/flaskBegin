@@ -59,7 +59,7 @@ def contact():
 @app.route('/shutdown')
 def shutdown():
     shutdown_server()
-    return platform.python_version() + ' by by ...'
+    return 'python ' + platform.python_version() + ' by by ...'
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
