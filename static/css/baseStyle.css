@@ -1,0 +1,31 @@
+h2 {color: red;}
+h3 {color: blue;}
+.container {
+  padding-top: 10px;
+  border-style: double;
+  background-color:lightblue;
+}
+.subCont {
+  padding-top: 10px;
+  border-style: double;
+  background-color:lightgreen;
+}
+.active {
+  font-size:1.5em;
+  font-weight:bold;  
+}
+.footer {
+  border-style: double;
+  background-color:grey;
+}
+.big {
+  font-size:em;
+  font-weight:bold;  
+}
+.small {
+  font-size:0.8em;
+  font-weight:normal;  
+}
+.horz {
+  display: flex;
+}

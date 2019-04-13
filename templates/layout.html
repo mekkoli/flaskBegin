@@ -1,82 +1,37 @@
 {% from "macros.html" import nav_link with context %}
+{% from "macros.html" import nav_span with context %}
 <!DOCTYPE html>
 <html>
   {% block head %}
     <title>{% block title %}{% endblock %} flask jinja2 first example</title>
   {% endblock %}
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<style type="text/css">
-  .container {
-    max-width: 500px;
-    padding-top: 10px;
-    border-style: double;
-  }
-  .active {
-    font-size:1.5em;
-    font-weight:bold;  
-  }
-  .footer {
-    border-style: double;
-  }
-  .big {
-    font-size:em;
-    font-weight:bold;  
-  }
-  .small {
-    font-size:0.8em;
-    font-weight:normal;  
-  }
-  h2 {color: red;}
-  h3 {color: blue;}
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/baseStyle.css') }}">
 </head>
 <body>
-  <nav class="navbar navbar-inverse" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">jinja2azz</a>
-      </div>
-      
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          {{ nav_link('root', 'root') }}
-          {{ nav_link('home', 'Home') }}
-          {{ nav_link('about', 'About') }}
-          {{ nav_link('contact', 'Contact Us') }}
-          {{ nav_link('shutdown', 'shutdown') }}
-        </ul>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btnbtn-default">submitSomething</button>
+  <nav class="container">
+    <div class="horz">
+      {{nav_span('root', 'root') }}
+      {{nav_span('home', 'Home') }}
+      {{nav_span('about', 'About') }}
+      {{nav_span('contact', 'Contact Us') }}
+      <div>
+        <form>
+          <input type="text">
+          <button type="submit">click</button>
         </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              {{ nav_link('root', 'root') }}
-              {{ nav_link('home', 'Home') }}
-              {{ nav_link('about', 'About') }}
-              {{ nav_link('contact', 'Contact Us') }}
-              {{ nav_link('shutdown', 'shutdown') }}
-              <li class="divider"></li>
-              <li><a href="https://google.com"> separated google </a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>&nbsp;
+      <select onchange="location = this.value;">
+        <option value="">dropDownMenu</option>
+        {{nav_link('root', 'root') }}
+        {{nav_link('home', 'Home') }}
+        {{nav_link('about', 'About') }}
+        {{nav_link('contact', 'Contact Us') }}
+      </select>
+    </div>
   </nav>
-  <div class="container">
+  <div class="subCont">
     {% block heading %}
       <h2>{% block page %}{% endblock %} - Flask Super Example</h2>
     {% endblock %}
@@ -90,8 +45,7 @@
         powerful super block!<br>
       {% endblock %}
     </div><br>    
+      <a href="/shutdown">shutdown</a>
   </div>
-  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>

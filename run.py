@@ -56,7 +56,7 @@ def contact():
 @app.route('/shutdown')
 def shutdown():
     shutdown_server()
-    return 'by by server shutting down...'
+    return 'by by ...'
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
