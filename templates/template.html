@@ -1,0 +1,23 @@
+{% from "macros.html" import bold with context %}
+{% extends "layout.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+<h3> this is the start of my child template</h3><br>
+<p>my string: {{my_string}}</p>
+<p>my title: {{title}}</p>
+<p> {{ bold(request.endpoint, my_string) }} </p>
+<p>third value from the list: "{{my_list[2]}}"</p>
+<p>loop through the list:</p>
+<ul>
+  {% for n in my_list %}
+    <li>{{n}}</li>
+  {% endfor %}
+</ul>
+<h6>current date/time: {{ current_time | datetimefilter }}</h6>
+<p>same list with a filter: {{my_list|join(', ') }}</p>
+<h3>this is the end of my child template</h3>
+  {% block footer %}
+    {{super()}}
+  {% endblock %}
+{% endblock %}
+
