@@ -1,7 +1,9 @@
 {% from "macros.html" import nav_link with context %}
 <!DOCTYPE html>
 <html>
-<title>{% block title %}{% endblock %}</title>
+  {% block head %}
+    <title>{% block title %}{% endblock %} flask jinja2 first example</title>
+  {% endblock %}
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -27,6 +29,7 @@
     font-weight:normal;  
   }
   h2 {color: red;}
+  h3 {color: blue;}
 </style>
 </head>
 <body>
@@ -74,7 +77,10 @@
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container">
-    <h2>This is part of my base template</h2><br>
+    {% block heading %}
+      <h2>{% block page %}{% endblock %} - Flask Super Example</h2>
+    {% endblock %}
+    <h3>This is part of my base template</h3><br>
     {% block content %}{% endblock %}<br>
     <h2>This is part of my base template</h2> 
     <div class="footer">

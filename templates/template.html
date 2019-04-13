@@ -1,7 +1,13 @@
-{% from "macros.html" import bold with context %}
 {% extends "layout.html" %}
-{% block title %}{{title}}{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block page %}{{title}}{% endblock %}
+{% block heading %}
+  {{ super() }}
+{% endblock %}
 {% block content %}
+{% from "macros.html" import bold with context %}
 <h3> this is the start of my child template</h3><br>
 <p>my string: {{my_string}}</p>
 <p>my title: {{title}}</p>
@@ -20,4 +26,3 @@
     {{super()}}
   {% endblock %}
 {% endblock %}
-
