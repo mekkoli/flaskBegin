@@ -1,15 +1,9 @@
-# 2019-04-11 arrivato a pag 18 del pdf
-
-from flask import Flask, render_template
+from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
-def template_test():
-  return render_template(
-    'template.html',
-    my_string="Wheeeee!", 
-    my_list=[0,1,2,3,4,5]
-  )
+def index():
+  return "index or root web publish file"
 
 if __name__ == '__main__':
   app.run(debug=True)

@@ -1,9 +1,8 @@
+#!/usr/bin/python3
 # 2019-04-12 arrivato alla fine del pdf
-# eliminare i riferimenti a cdn esterni css ...
-# 2019-04-12 fatto
 from flask import Flask, render_template
-from flask import request
 import datetime
+from flask import request
 import platform
 
 app = Flask(__name__)
@@ -54,6 +53,20 @@ def contact():
     my_list=[0,'b','alfa','#'],
     current_time=datetime.datetime.now(),
     title="Contact Us"
+  )
+
+@app.route("/search", methods=['GET', 'POST'])
+def search():
+  if request.method == 'GET':
+    return 'no get method, only post'
+  else:
+    keyword = request.form['keyword']
+    return render_template(
+      'template.html',
+      my_string=keyword,
+      my_list=[keyword, keyword + '1', keyword + '2', keyword + '3'],
+      current_time=datetime.datetime.now(),
+      title=keyword
   )
 
 @app.route('/shutdown')

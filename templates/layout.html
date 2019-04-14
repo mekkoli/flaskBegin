@@ -12,23 +12,25 @@
 <body>
   <nav class="container">
     <div class="horz">
-      {{nav_span('root', 'root') }}
+      {{nav_span('root', 'index /') }}
       {{nav_span('home', 'home page') }}
-      {{nav_span('about', 'about page') }}
-      {{nav_span('contact', 'contacts page') }}
+      {{nav_span('about', 'about us') }}
+      {{nav_span('contact', 'contacts us') }}
+      {{nav_span('search', 'search keyword') }}
       <div>
-        <form>
-          <input type="text">
+        <form method="post" action="/search">
+          <input name="keyword" type="text">
           <button type="submit">click</button>
         </form>
       </div>
       <div>
         <select onchange="location = this.value;">
           <option value="">dropDownMenu</option>
-          {{nav_link('root', 'root') }}
-          {{nav_link('home', 'Home') }}
-          {{nav_link('about', 'About') }}
-          {{nav_link('contact', 'Contact Us') }}
+          {{nav_link('root', 'index /') }}
+          {{nav_link('home', 'home page') }}
+          {{nav_link('about', 'about us') }}
+          {{nav_link('contact', 'contact us') }}
+          {{nav_link('search', 'search keyword') }}
         </select>
       </div>
       <div>
@@ -38,6 +40,7 @@
           <img src="{{ url_for('static', filename='imgs/shutdown.png') }}" width="32"/>
         </a>
       </div>
+      <div>python {{pyVer}}</div>
     </div>
   </nav>
   <div class="subCont">

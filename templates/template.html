@@ -19,9 +19,9 @@
     <li>{{n}}</li>
   {% endfor %}
 </ul>
-<h6>current date/time: {{ current_time | datetimefilter }}</h6>
+<h4>current date/time: {{ current_time | datetimefilter }}</h4>
 <p>same list with a filter: {{my_list|join(', ') }}</p>
-<h3>this is the end of my child template</h3>
+<h3>this is the end of my child template {% print 'azzarola' %}</h3>
   {% block footer %}
     {{super()}}
   {% endblock %}
