@@ -8,6 +8,7 @@ apt-get install python3-venv
 python3 -m venv venv 
 source venv/bin/activate 
 
+(3) store credential
+$ git config --global credential.helper cache
 
-(3) $ git config --global credential.helper cache
-
+(4) inside sublime: now run.py cannot run only with shebang line
