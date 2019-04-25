@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-# 2019-04-12 arrivato alla fine del pdf
 from flask import Flask, render_template
 import datetime
 from flask import request
@@ -81,4 +79,11 @@ def shutdown_server():
     func()
 
 if __name__ == '__main__':
+  #flask on default port 5000 only on localhost
   app.run(debug=True)
+  
+  # flask on all interfaces
+  # app.run(debug=True, host='0.0.0.0')
+  
+  # flask on other port > 1024
+  # app.run(debug=True, port=5555)
